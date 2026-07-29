@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- SYNTHETIC FIXTURE — ASP.NET case detail. Edge case: heavily "stacked"
+     date/location cells (date on line 1, location on line 2) plus a suffix name
+     and mixed date formats to exercise normalization. 2 attorneys total. -->
+<html lang="en">
+<head><meta charset="utf-8"><title>Case Detail - D-1-GN-24-000004</title></head>
+<body>
+  <div id="caseHeader">
+    <table>
+      <tr><td class="label">Case Number:</td><td class="value">D-1-GN-24-000004</td></tr>
+      <tr><td class="label">Style:</td><td class="value">Maria Gonzalez vs. Lone Star Insurance Co.</td></tr>
+      <tr><td class="label">Date Filed:</td><td class="value">January 9, 2024</td></tr>
+      <tr><td class="label">Case Type:</td><td class="value">Injury or Damage - Motor Vehicle</td></tr>
+      <tr><td class="label">Status:</td><td class="value">Disposed</td></tr>
+      <tr><td class="label">Court:</td><td class="value">126th District Court</td></tr>
+    </table>
+  </div>
+
+  <table id="grdParties" rules="all" border="1">
+    <tr><th>Party</th><th>Type</th><th>Attorney of Record</th></tr>
+    <tr class="party-row">
+      <td>Maria Gonzalez</td>
+      <td>Plaintiff</td>
+      <td>Fitzgerald, William H. Sr.</td>
+    </tr>
+    <tr class="party-row">
+      <td>Lone Star Insurance Co.</td>
+      <td>Defendant</td>
+      <td>Kim, Soo-Jin</td>
+    </tr>
+  </table>
+
+  <table id="grdEvents" rules="all" border="1">
+    <tr><th>Date / Location</th><th>Event</th></tr>
+    <tr class="event-row">
+      <td>02/12/2024<br>Mediation Center, Suite 400</td>
+      <td>Court-Ordered Mediation</td>
+    </tr>
+    <tr class="event-row">
+      <td>06/05/2024<br>Courtroom 2C</td>
+      <td>Final Disposition — Settled</td>
+    </tr>
+  </table>
+</body>
+</html>

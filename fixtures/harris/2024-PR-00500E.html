@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- SYNTHETIC FIXTURE — rendered JS-portal case detail. Edge case: events that
+     stack the date and location inside ONE node (no separate location element),
+     exercising the same split_stacked_cell logic as the ASP.NET adapter. -->
+<html lang="en">
+<head><meta charset="utf-8"><title>Case 2024-PR-00500E</title></head>
+<body>
+  <main id="app">
+    <div class="case-detail" data-case-number="2024-PR-00500E">
+      <h1 class="case-style">In re: Guardianship of R. Okafor</h1>
+      <dl class="case-meta">
+        <dt>Filed</dt><dd>2024-03-02</dd>
+        <dt>Type</dt><dd>Probate - Guardianship</dd>
+        <dt>Status</dt><dd>Active</dd>
+        <dt>Court</dt><dd>Probate Court No. 3</dd>
+      </dl>
+
+      <section class="parties">
+        <div class="party" data-role="Plaintiff">
+          <span class="party-name">Applicant: Ngozi Okafor</span>
+          <ul class="attorneys">
+            <li>Helena M. Vasquez</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="events">
+        <div class="event">
+          <span class="event-date">2024-04-10<br>Probate Courtroom, 3rd Floor</span>
+          <span class="event-desc">Hearing on Application for Guardianship</span>
+        </div>
+        <div class="event">
+          <span class="event-date">2024-06-20<br>Probate Courtroom, 3rd Floor</span>
+          <span class="event-desc">Annual Account Review</span>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

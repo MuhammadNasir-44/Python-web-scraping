@@ -1,0 +1,53 @@
+# Harris County — modern JavaScript single-page portal.
+# In --live mode the fetcher for this adapter would be a Playwright driver that
+# renders the page before this same parsing code runs (see adapters/harris.py).
+key: harris
+county: Harris County
+adapter: js_portal                     # -> HarrisJsPortalScraper
+base_url: https://example-portal.invalid/harris    # synthetic; never contacted
+court: County Civil Court at Law No. 2
+fixtures_dir: fixtures/harris
+
+rate_limit_per_sec: 0.5
+max_retries: 4
+
+# Selectors target the *rendered* DOM (post-JavaScript).
+selectors:
+  search_result_card: "div.result-card[data-case-number]"
+  case_root: "div.case-detail"
+  case_style: "h1.case-style"
+  case_meta: "dl.case-meta"
+  party_block: "section.parties div.party"
+  party_name: "span.party-name"
+  party_role_attr: "data-role"
+  attorney_item: "ul.attorneys li"
+  event_block: "section.events div.event"
+  event_date: "span.event-date"
+  event_desc: "span.event-desc"
+  event_loc: "span.event-loc"
+
+# Two results pages to demonstrate pagination.
+search_pages:
+  - results_1
+  - results_2
+
+# Harris civil numbers modeled as 2024-CV-##### with a court-suffix convention.
+# Two sequences show the more advanced generator patterns:
+sequences:
+  # (a) letter_suffix: every number A..D  (cartesian product)
+  - pattern: letter_suffix
+    template: "2024-CV-{seq}{suffix}"
+    start: 1001
+    end: 1004
+    width: 5
+    suffixes: ["A", "B", "C", "D"]
+  # (b) per_suffix: each suffix carries its own independent numeric range
+  - pattern: per_suffix
+    template: "2024-PR-{seq}{suffix}"
+    width: 5
+    suffixes: ["E", "F", "G", "H"]
+    per_suffix_ranges:
+      E: { start: 500, end: 502 }
+      F: { start: 700, end: 701 }
+      G: { start: 900, end: 900 }
+      H: { start: 950, end: 953 }

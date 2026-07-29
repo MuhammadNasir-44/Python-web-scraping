@@ -1,0 +1,36 @@
+# Travis County — classic ASP.NET "Public Access" WebForms portal.
+# Everything site-specific lives here; the adapter code is generic.
+key: travis
+county: Travis County
+adapter: aspnet_public_access          # -> TravisPublicAccessScraper
+base_url: https://example-portal.invalid/travis   # synthetic; never contacted
+court: 201st District Court
+fixtures_dir: fixtures/travis
+
+# Politeness / resilience (used only in --live mode).
+rate_limit_per_sec: 1.0
+max_retries: 3
+
+# CSS selectors the adapter reads. Retarget these to serve another ASP.NET
+# portal without touching Python.
+selectors:
+  search_result_link: "table#grdCases a.case-link"
+  header_row: "#caseHeader tr"
+  party_row: "table#grdParties tr.party-row"
+  event_row: "table#grdEvents tr.event-row"
+
+# Pre-rendered search-results pages to walk (pagination). In --live mode this
+# would instead be driven by the ASP.NET __doPostBack paging controls.
+search_pages:
+  - results_1
+
+# Candidate case-number sequences to enumerate. Travis civil numbers look like
+# D-1-GN-24-000001. Here: a plain numeric range.
+sequences:
+  - pattern: plain
+    template: "D-1-GN-{year}-{seq}{suffix}"
+    extra:
+      year: "24"
+    start: 1
+    end: 20
+    width: 6

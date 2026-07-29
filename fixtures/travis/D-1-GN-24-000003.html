@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- SYNTHETIC FIXTURE — ASP.NET case detail. Edge case: 5 attorneys total
+     (2 for the plaintiff, 3 for the defendant; attorneys stacked in one cell). -->
+<html lang="en">
+<head><meta charset="utf-8"><title>Case Detail - D-1-GN-24-000003</title></head>
+<body>
+  <div id="caseHeader">
+    <table>
+      <tr><td class="label">Case Number:</td><td class="value">D-1-GN-24-000003</td></tr>
+      <tr><td class="label">Style:</td><td class="value">Riverside Holdings LLC vs. Delta Freight Inc.</td></tr>
+      <tr><td class="label">Date Filed:</td><td class="value">04/21/2024</td></tr>
+      <tr><td class="label">Case Type:</td><td class="value">Contract - Commercial</td></tr>
+      <tr><td class="label">Status:</td><td class="value">Open</td></tr>
+      <tr><td class="label">Court:</td><td class="value">353rd District Court</td></tr>
+    </table>
+  </div>
+
+  <table id="grdParties" rules="all" border="1">
+    <tr><th>Party</th><th>Type</th><th>Attorney of Record</th></tr>
+    <tr class="party-row">
+      <td>Riverside Holdings LLC</td>
+      <td>Plaintiff</td>
+      <td>Nguyen, Thomas Van<br>O'Brien, Katherine M.</td>
+    </tr>
+    <tr class="party-row">
+      <td>Delta Freight Inc.</td>
+      <td>Defendant</td>
+      <td>Garcia, Maria Elena<br>Washington, Andre L. III<br>Patel, Rohan</td>
+    </tr>
+  </table>
+
+  <table id="grdEvents" rules="all" border="1">
+    <tr><th>Date / Location</th><th>Event</th></tr>
+    <tr class="event-row">
+      <td>05/10/2024<br>Courtroom 5B</td>
+      <td>Temporary Injunction Hearing</td>
+    </tr>
+    <tr class="event-row">
+      <td>07/18/2024<br>Courtroom 5B</td>
+      <td>Docket Call</td>
+    </tr>
+    <tr class="event-row">
+      <td>09/30/2024<br>Courtroom 5B</td>
+      <td>Jury Trial Setting</td>
+    </tr>
+  </table>
+</body>
+</html>

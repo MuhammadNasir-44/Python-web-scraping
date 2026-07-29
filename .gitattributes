@@ -1,0 +1,3 @@
+# Synthetic HTML fixtures are test data, not source code.
+fixtures/** linguist-vendored
+*.html linguist-vendored
